@@ -1,5 +1,5 @@
 import { Home, Inbox, Calendar, Search, Settings, User2, ChevronUp, Plus, Projector, ChevronsUpDown } from "lucide-react"
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuBadge, SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar"
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuBadge, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem } from "./ui/sidebar"
 import Image from "next/image"
 import Link from "next/link"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
@@ -65,12 +65,12 @@ function AppSidebar() {
                                             <span>{item.title}</span>
                                         </a>
                                     </SidebarMenuButton>
-                                    {item.title==="Inbox" && (
+                                    {item.title === "Inbox" && (
                                         <SidebarMenuBadge>24</SidebarMenuBadge>
                                     )}
                                 </SidebarMenuItem>
                             ))}
-                        
+
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
@@ -99,12 +99,13 @@ function AppSidebar() {
                     </SidebarGroupContent>
                 </SidebarGroup>
 
+                {/* COLLAPSIBLE  */}
                 <Collapsible defaultOpen className="group/collapsible">
                     <SidebarGroup>
                         <SidebarGroupLabel asChild>
                             <CollapsibleTrigger>
                                 Collapsable Group
-                                    <ChevronsUpDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                                <ChevronsUpDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
                             </CollapsibleTrigger>
                         </SidebarGroupLabel>
 
@@ -131,6 +132,39 @@ function AppSidebar() {
                     </SidebarGroup>
                 </Collapsible>
 
+                {/* NESTED  */}
+                <SidebarGroup>
+                    <SidebarGroupLabel>Nested Items</SidebarGroupLabel>
+                    <SidebarGroupContent>
+                        <SidebarMenu>
+                            <SidebarMenuItem>
+                                <SidebarMenuButton asChild>
+                                    <Link href="#">
+                                        <Projector /> See All Projects
+                                    </Link>
+                                </SidebarMenuButton>
+                                <SidebarMenuSub>
+                                    <SidebarMenuSubItem>
+                                        <SidebarMenuSubButton asChild>
+                                            <Link href="/#">
+                                                <Plus />
+                                                Add Project
+                                            </Link>
+                                        </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
+                                    <SidebarMenuSubItem>
+                                        <SidebarMenuSubButton asChild>
+                                            <Link href="/#">
+                                                <Plus />
+                                                Add Category
+                                            </Link>
+                                        </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
+                                </SidebarMenuSub>
+                            </SidebarMenuItem>
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup>
             </SidebarContent>
             <SidebarFooter>
                 <SidebarMenu>
