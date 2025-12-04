@@ -5,6 +5,7 @@ import Link from "next/link"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible"
 import { Button } from "./ui/button"
+import { Avatar, AvatarImage } from "./ui/avatar"
 
 const items = [
     {
@@ -44,8 +45,10 @@ function AppSidebar() {
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link href="/">
-                                <Image src="logo.svg" alt="logo" width={20} height={20} />
-                                <span>Toheedx Dev</span>
+                                <Avatar>
+                                    <AvatarImage src= "https://lh3.googleusercontent.com/a/ACg8ocICwDpzwqdKG0hWtq4_xZOKDDufk9l2ICx-vIlFaGJGSgVjChpMIA=s288-c-no" />
+                                </Avatar>
+                                <h1 className="text-lg font-bold">Toheedx Dev</h1>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>

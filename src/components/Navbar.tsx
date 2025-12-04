@@ -56,7 +56,7 @@ function Navbar() {
                 <DropdownMenu>
                     <DropdownMenuTrigger>
                         <Avatar>
-                            <AvatarImage src="https://github.com/shadcn.png" />
+                            <AvatarImage src="https://lh3.googleusercontent.com/a/ACg8ocICwDpzwqdKG0hWtq4_xZOKDDufk9l2ICx-vIlFaGJGSgVjChpMIA=s288-c-no" />
                             <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
                     </DropdownMenuTrigger>
